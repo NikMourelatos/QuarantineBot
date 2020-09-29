@@ -38,23 +38,47 @@ namespace QuarantineBot
             // Create a WebSocket-based command context based on the message
             var context = new SocketCommandContext(_client, message);
 
-            // Determine if the message is a command based on the prefix and make sure no bots trigger commands
-            if (message.HasCharPrefix('^', ref argPos)) {
-                // var result = await _service.ExecuteAsync(context,argPos,_service);
 
-                //if ((!result.IsSuccess) && (result.Error != CommandError.UnknownCommand))
-                //{
-                   await context.Channel.SendMessageAsync("Trey is dumb");
-                //}
+            if (message.Author.Id == _client.CurrentUser.Id || message.Author.IsBot) return;
+
+            if (!(message.HasCharPrefix('^', ref argPos) ||
+            message.HasMentionPrefix(_client.CurrentUser, ref argPos)) ||
+            message.Author.IsBot)
+                return;
+            // Determine if the message is a command based on the prefix and make sure no bots trigger commands
+            //if (message.HasCharPrefix('^', ref argPos)) {
+            Console.WriteLine(message.Content);
+                // var result = await _service.ExecuteAsync(context,argPos,_service);
+            if (message.Content == "^Asuna")
+            {
+                await context.Channel.SendFileAsync("asuna.jpeg", "ASUNA KUNNN");
             }
+            else if(message.Content == "^Ping")
+            {
+                await context.Channel.SendMessageAsync("Pong");
+            }
+            else if(message.Content == "^Yumeko") {
+                await context.Channel.SendFileAsync("yumeko.jpg");
+
+            }
+
+            else
+            {
+
+                    //if ((!result.IsSuccess) && (result.Error != CommandError.UnknownCommand))
+                    //{
+
+                await context.Channel.SendMessageAsync("Trey is dumb");
+                    //}
+
+            }
+            //}
                 
-                //return;
 
             
-            await message.Channel.SendMessageAsync("Trey is Dumb");
+            //await message.Channel.SendMessageAsync("Trey is Dumb");
 
-            // Execute the command with the command context we just
-            // created, along with the service provider for precondition checks.
+          
             //await _commands.ExecuteAsync(
               //  context: context,
                 //argPos: argPos,

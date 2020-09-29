@@ -22,7 +22,7 @@ namespace QuarantineBot
 
             _client.Log += Log;
 
-            var token = "NzYwMjkwNTY1NDEzMjczNjMw.X3J5xA.JiwJsWNC1e10n3X_jC-1HthBQCk";
+            var token = //"NzYwMj//kwNTY1ND//EzMjczNj//Mw.X3J5xA.i0//gwtP5UGxFbGbZQ4m6E4Uib-ic";//"NzYwMjkwNTY1NDEzMjczNjMw.X3J5xA.JiwJsWNC1e10n3X_jC-1HthBQCk";
 
             // var token = File.ReadAllText("token.txt");
 
@@ -32,7 +32,6 @@ namespace QuarantineBot
 
             _handler = new CommandHandler(_client);
 
-            // Block this task until the program is closed.
             await Task.Delay(-1);
         }
         private Task Log(LogMessage msg)
