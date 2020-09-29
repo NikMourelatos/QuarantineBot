@@ -59,7 +59,10 @@ namespace QuarantineBot
             }
             else if(message.Content == "^Yumeko") {
                 await context.Channel.SendFileAsync("yumeko.jpg");
-
+            }
+            else if (message.Content == "^roast")
+            {
+                await context.Channel.SendMessageAsync(message.Author.Mention + " smells like dirty socks.");
             }
 
             else
