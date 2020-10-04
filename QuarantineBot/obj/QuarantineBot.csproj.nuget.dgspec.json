@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nikmourelatos/Projects/QuarantineBot/QuarantineBot/QuarantineBot.csproj": {}
+    "C:\\SD\\QuarantineBot\\QuarantineBot\\QuarantineBot.csproj": {}
   },
   "projects": {
-    "/Users/nikmourelatos/Projects/QuarantineBot/QuarantineBot/QuarantineBot.csproj": {
+    "C:\\SD\\QuarantineBot\\QuarantineBot\\QuarantineBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nikmourelatos/Projects/QuarantineBot/QuarantineBot/QuarantineBot.csproj",
+        "projectUniqueName": "C:\\SD\\QuarantineBot\\QuarantineBot\\QuarantineBot.csproj",
         "projectName": "QuarantineBot",
-        "projectPath": "/Users/nikmourelatos/Projects/QuarantineBot/QuarantineBot/QuarantineBot.csproj",
-        "packagesPath": "/Users/nikmourelatos/.nuget/packages/",
-        "outputPath": "/Users/nikmourelatos/Projects/QuarantineBot/QuarantineBot/obj/",
+        "projectPath": "C:\\SD\\QuarantineBot\\QuarantineBot\\QuarantineBot.csproj",
+        "packagesPath": "C:\\Users\\eweis\\.nuget\\packages\\",
+        "outputPath": "C:\\SD\\QuarantineBot\\QuarantineBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nikmourelatos/.config/NuGet/NuGet.Config"
+          "C:\\Users\\eweis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
