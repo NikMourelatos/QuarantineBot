@@ -11,21 +11,24 @@ namespace QuarantineBot
     {
         private readonly DiscordSocketClient _client;
         private readonly CommandService _service;
+        public TicTacToeManager _ticTacToeManager;
 
         // Retrieve client and CommandService instance via ctor
         public CommandHandler(DiscordSocketClient client)//, CommandService service)
         {
-           
+
             _client = client;
 
             _service = new CommandService();
+
+            _ticTacToeManager = new TicTacToeManager();
 
             //_service.AddModuleAsync(Assembly.GetEntryAssembly());
             _client.MessageReceived += HandleCommandAsync;
 
         }
 
-        
+
         private async Task HandleCommandAsync(SocketMessage messageParam)
         {
             // Don't process the command if it was a system message
@@ -60,9 +63,10 @@ namespace QuarantineBot
             else if(message.Content == "^Yumeko") {
                 await context.Channel.SendFileAsync("yumeko.jpg");
             }
-            else if (message.Content == "^roast")
+            else if (message.Content.StartsWith("^ttt"))
             {
-                await context.Channel.SendMessageAsync(message.Author.Mention + " smells like dirty socks.");
+                string output = _ticTacToeManager.handleInput(message);
+                await context.Channel.SendMessageAsync(output);
             }
 
             else
@@ -76,12 +80,12 @@ namespace QuarantineBot
 
             }
             //}
-                
 
-            
+
+
             //await message.Channel.SendMessageAsync("Trey is Dumb");
 
-          
+
             //await _commands.ExecuteAsync(
               //  context: context,
                 //argPos: argPos,
