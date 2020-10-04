@@ -24,9 +24,9 @@ namespace QuarantineBot
             }
             if (!Int32.TryParse(arg, out int number))
             {
-                return "Please specify a number representing a position on the board";
+                return "Please specify a number representing a position on the board (1-9)";
             }
-            if (number < 0)
+            if (number < 1 || number > 9)
             {
                 return "Invalid number, must be 1-9";
             }
@@ -41,10 +41,6 @@ namespace QuarantineBot
             else if (number <= 9)
             {
                 board[2, number - 7] = turn;
-            }
-            else
-            {
-                return "Invalid number, must be 1-9";
             }
 
             this.toggleTurn();
